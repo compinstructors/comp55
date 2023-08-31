@@ -96,11 +96,7 @@ Java will give you the entire string from the starting character given up until 
 ## Java has two meta-types - primitives and objects
 
 Primitives are the basic types you know and love from C++,
-things like
-```int```,
-```char```,
-```double```,
-and ```boolean```.
+things like ```int```, ```char```, ```double```, and ```boolean```.
 You can immediately identify them based on the case.
 Primitives are all in lower case while other types in Java,
 like ```String```,
@@ -185,9 +181,7 @@ will outweigh the hours you spend trying to figure out freed memory exceptions.
 
 ## Output/Input stuff has changed
 
-I'm not gonna lie,
-```cout```,
-```cin``` was pretty easy to use.
+I'm not gonna lie, ```cout``` and ```cin``` were pretty easy to use.
 Java has recognized though that there are some potential dangers in getting input
 that isn't in the right type for example,
 so they have made getting input a little bit more difficult.

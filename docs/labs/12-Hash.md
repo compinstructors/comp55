@@ -127,7 +127,7 @@ that has not been introduced into this particular phobias map
 like say this one
 
 ```java
-String possibleDef = phobias.get("osvaldophobia")
+String possibleDef = phobias.get("sebastianphobia")
 ```
 
 The ```HashMap``` will return ```null```,
@@ -366,16 +366,13 @@ but what I'd like you to do is
 For the useful part,
 you will come up with at least three different potential places
 where you could use a ```HashMap``` in your project,
-and provide example code for how an ArrayList can improve your project.
+and provide example code for how it can improve your project.
 Remember that what I've shown you here has been using mostly strings as keys,
 however,
 your key can be any object that you choose.
 Think about how you could implement or link a ```GObject``` with a class,
 or vice-versa.
 HashMaps are pretty cool and can save us a lot of work.
-If you are the first one to finish reading,
-then go ahead and follow the next set of steps,
-which is how to get additional credit for the lab.
 
 Once you are done,
 you can [move on to part 2](12-A-Hash2.html).

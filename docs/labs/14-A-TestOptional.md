@@ -53,8 +53,6 @@ we must keep the user in mind.
 What we design is what they see.
 Hence, for your application to be user-friendly,
 you must learn to test your graphical user interface (GUIs) too.
-Therefore, I'd encourage you to check out a
-[few exercises posted on this testing website](https://www.testingementor.com/software-testing-online-resources/software-testing-exercises/#Software_Testing_Exercise_1_-_How_many_bugs_can_you_find_on_this_buggy_windows_calculator).
 
 These exercises will teach you to look at the application's interface and find bugs in them.
 The key objective of Software Testing Exercises is to leverage

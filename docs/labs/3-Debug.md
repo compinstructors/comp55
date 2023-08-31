@@ -18,7 +18,7 @@
 
 ## Introduction
 
-Today you working on a topic often overlooked –
+Today you're working on a topic often overlooked –
 how to Debug effectively.
 It's where you spend most of your time,
 and often there's little training on it. 😞

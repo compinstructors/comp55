@@ -8,11 +8,11 @@ Points are given based on completing all steps with your team
     - [Everyone else – Review the mini-lab steps](#everyone-else--review-the-mini-lab-steps)
 - [Step 2: Everyone - Clone the new project](#step-2-everyone---clone-the-new-project)
 - [Step 3: Everyone - make a change and reset (undo)](#step-3-everyone---make-a-change-and-reset-undo)
-- [Step 4: Martyr \& Hackslash - Martyr commits and Hackslash pulls afterward](#step-4-martyr--hackslash---martyr-commits-and-hackslash-pulls-afterward)
+- [Step 4: Martyr & Hackslash - Martyr commits and Hackslash pulls afterward](#step-4-martyr--hackslash---martyr-commits-and-hackslash-pulls-afterward)
 - [Step 5: Everyone - Look at the results in the History](#step-5-everyone---look-at-the-results-in-the-history)
 - [Step 6: Hackslash - commit multiple times and then push](#step-6-hackslash---commit-multiple-times-and-then-push)
 - [Step 7: Procrastinator - Commit and Unsuccessfully Push](#step-7-procrastinator---commit-and-unsuccessfully-push)
-- [Step 8: Martyr \& Hackslash - commit and push the same line](#step-8-martyr--hackslash---commit-and-push-the-same-line)
+- [Step 8: Martyr & Hackslash - commit and push the same line](#step-8-martyr--hackslash---commit-and-push-the-same-line)
 - [Step 9: Everyone - Successfully resolve a merge conflict](#step-9-everyone---successfully-resolve-a-merge-conflict)
 - [Step 10: Everyone - Be aware of a conflict problems](#step-10-everyone---be-aware-of-a-conflict-problems)
 - [Step 11: Everyone - Practice pushing and pulling](#step-11-everyone---practice-pushing-and-pulling)
@@ -28,9 +28,6 @@ so it's important to work together.
 **Make sure that you can see what everyone else is doing so that you can help each other.**
 It's also important that all of you finished the [Git Prep Mini-Lab](8-Github-Prep.html),
 which was necessary to finish before starting here.
-You should also be part of this class's GitHub organization,
-if you didn't accept the invite,
-let me know and I can send you another one.
 
 ## Step 0: Everyone - Pick roles and setup room
 
@@ -42,7 +39,6 @@ Each one of you will take on one of these four roles:
 2. hackslash
 3. procrastinator
 4. martyr (git team admin will take on this role for 3-person teams)
-
 In addition to feeling comfortable with computers,
 your git team admin should also feel comfortable searching for things in google.
 Once you decide on an admin notify me.
@@ -82,7 +78,7 @@ button on your group repo page.
 
 With that URL in your clipboard,
 you should use the
-[same guidelines from our previous lab](8-Github-Prep.html##importing-your-new-repository-in-eclipse)
+[same guidelines from our previous lab](8-Github-Prep.html#importing-your-new-github-repository-into-eclipse)
 that we posted previously about cloning a git repository via eclipse,
 so go into eclipse,
 open up the git perspective and clone a repository.
@@ -570,7 +566,7 @@ git will use this notation:
 ```
 
 This notation lets you know you need to make a decision
-for all places where it notices a conflict on what she be used.
+for all places where it notices a conflict on what should be used.
 If you get into a conflicting state,
 it's your job to decide what code to keep
 (yours, the servers or some mix of the two).

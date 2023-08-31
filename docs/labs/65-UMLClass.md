@@ -155,12 +155,13 @@ Using this format will draw the given relationship between the two classes.
 Here are some examples and what they normally mean.
 
 <!-- markdownlint-disable MD037 -->
-|symbol|association|example|
-|---|---|---|
+
+| symbol | association | example |
+| --- | --- | --- |
 | ```-```| creates a simple horizontal line between the two classes, which represents a very general assocation between the two classes. (A second hyphen changes the orientation of the classes and lines to be vertical, and even more hyphens means a greater distance between the two classes). Distance doesn't have any well regarded meaning but can be useful in helping you draw out particular relationships. | *```Student---Course```* |
 | ```<-``` <br> or <br>```->```| uses the greater than (```>```) or less than (```<```) sign to represent an arrow in UML which can be used to show some type of unidirectional association. Otherwise, if you would like to show a bidirectional association, you can use both arrows, (*```<->```*), but I would just stick to the simple line (*```---```*) instead of having both symbols on the end here | *```Student-->Key```* |
 | ```*--```| will draw a diamond for a **Composition** relationship, to denote that one class (the one where the diamond is closer to) has an instance variable that directly holds the one it is linked to. Sometimes you will see some difference between Composition and Aggregation, which has to do with whether one class will exist without the other. For comp 55 you can ignore this distinction, just use it if you feel as though you would have a single instance variable that would contain the other class (you can use the word *contains* to check to see if the relationship holds) | *```Student*--Brain```* |
-| ```<\|--``` (actually the vertical pipe character) | used for inheritance, to say that the class on the left is the superclass for the class on the right. Use the phrase *IS A* to check to see if the relationship holds | *```Student<\|--GradStudent```* |
+| ```<|--``` (actually the vertical pipe character) | used for inheritance, to say that the class on the left is the superclass for the class on the right. Use the phrase *IS A* to check to see if the relationship holds | *```Student<|--GradStudent```* |
 
 <!-- markdownlint-enable MD037 -->
 Realize though that this isn't everything that you can do,

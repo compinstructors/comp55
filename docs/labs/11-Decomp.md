@@ -105,7 +105,7 @@ Run the program and make sure that you get a ball on the screen.
 Now for step 2,
 on each ```actionPerformed```,
 move ```ball``` by a pixel or two.
-Don't' worry about setting the ball's color or anything.
+Don't worry about setting the ball's color or anything.
 Run the program and fix anything
 to make sure that have a ball that is just moving across the screen continuously.
 **Don't continue until you get the ball moving in a straight line across the screen.**
@@ -195,7 +195,7 @@ you can now go on to tackle the Colors!
 While smooth color changing has become all the rage recently,
 especially with the adoption of LED lights in EVERYTHING,
 this wasn't always the case.
-In the early 200s,
+In the early 2000s,
 slowly transforming colors would generate a sense of awe.
 For this lab,
 let's pretend to be back in those olden times.
@@ -204,7 +204,7 @@ we need to understand how colors are represented in computers.
 For the most part,
 colors for each pixel are represented using 3 values:
 red, green, and blue -
-where each value corresponds to the intensity of each of those three colors(RGB).
+where each value corresponds to the intensity of each of those three colors (RGB).
 In computers,
 you can adjust these three values to get different colors.
 The intensity of each color is represented by a value from 0 to 255 in most applications.
@@ -314,7 +314,7 @@ some ideas are.
     If you need to,
     it may make sense for you to go back to doing the ```println```
     statements so that you end up getting an output like this,
-    then you can use those numbers as the RGB values in```setColor```.
+    then you can use those numbers as the RGB values in ```setColor```.
     For an additional challenge do this without any if statements.
     Submit your resulting code in text format.
     Good luck!

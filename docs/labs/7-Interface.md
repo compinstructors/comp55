@@ -162,7 +162,7 @@ This is what the new potential diagram would look like.
 While that may sound ok,
 what if we wanted to have another different emotional being?
 It sounds like a lot of copying and pasting,
-and we are better people that that.
+and we are better people than that.
 We don't want to harm anyone.
 So another solution would be
 to perhaps not have EmotionalRect and EmotionalOval subclass from GRect and GOval,
@@ -436,7 +436,7 @@ that will have a ```GImage``` as a parameter.
 Then in that constructor make sure to add in a line
 that would set the parameter passed in to your instance variable,
 similar to what you did in your
-[early java lab](2-JavaIntro.html####step-4:-override-the-toString()-method)
+[early java lab](2-JavaIntro.html#step-6-override-the-tostring-method)
 
 #### ***Set the image in each of the three methods.***
 
@@ -467,8 +467,7 @@ and as long as you define those three methods,
 then you can participate in the EmotionalSimulator
 (as long as you create that object and add yourself to the list of ```individuals```).
 While our examples are simple,
-remember that they could also be quite complex (if you do something expensive time wise,
-it may make sense to spawn it off using ```SwingUtilties.```*```runLater```*.
+remember that they could also be quite complex.
 *You have complete control as to what you would like to do.*  So as the last step,
 **I would like you to create a new class and add it to the simulator,
 so that when it is called,

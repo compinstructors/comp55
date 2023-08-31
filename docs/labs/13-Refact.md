@@ -38,9 +38,8 @@ In case you don't know,
 I'm not a big fan of ```if``` statements.
 If statements are often overused,
 especially by budding programmers.
-The most common issue I encounter with 55 students is their justification for an if statement
-that subsequently mutates into many ```if``` statements,
-when in fact if they re-thought their logic they most likely would need only one or two.
+One of the common issues is using too many ```if``` statements,
+when in fact you would only need one or two.
 This becomes very egregious when the ```if``` statements then lead to code
 that looks mostly the same in the different sections of the if statement,
 resulting in the loss of many kittens from all the copying and pasting that is being done.
@@ -83,14 +82,14 @@ if(x != 4 || x != 5) //😱😱😱
 ```
 
 While many of you look at it and think that the *statement evaluates to true with numbers
-that aren't equal to four or five*
-*That is incorrect. It works for all numbers.*
+that aren't equal to four or five,*
+*that is incorrect. It works for all numbers.*
 You can use some boolean theory to extract this statement to its equivalent version,
 which is here:
 
 | 😱 | ❤️ |
 |:---:|:---:|
-|```if(x != 4 \|\| x != 5)```|```if(!(x == 4 && x == 5))```|
+|```if(x != 4 || x != 5)```|```if(!(x == 4 && x == 5))```|
 
 Based on DeMorgan's laws,
 the two statements here are the same,
@@ -115,8 +114,7 @@ The easiest way to deal with this is when the code looks the same in both sectio
 
 | 😱 | ❤️ |
 |:---|:---|
-|<code lang="java">if(x > 5) {<br/>&nbsp;&nbsp;&nbsp;&nbsp;x+=10;<br/>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("another # plz");<br/>}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;x-=10;<br/>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("another # plz");<br/>}</code>|<code lang="java">if(x > 5) {<br/>&nbsp;&nbsp;&nbsp;&nbsp;x+=10;<br/>}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;x-=10;<br/>}<br/>System.out.println("another # plz");
-</code>|
+|<code lang="java">if(x > 5) {<br/>&nbsp;&nbsp;&nbsp;&nbsp;x+=10;<br/>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("another # plz");<br/>}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;x-=10;<br/>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("another # plz");<br/>}</code>|<code lang="java">if(x > 5) {<br/>&nbsp;&nbsp;&nbsp;&nbsp;x+=10;<br/>}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;x-=10;<br/>}<br/>System.out.println("another # plz");</code>|
 
 Most of the time you will have code at the beginning or the end of the curly braces
 that are in both sets of statements.
@@ -141,9 +139,7 @@ by storing the different information in variables?"*
 I get it,
 the last example was quite trivial,
 which we are doing for the sake of having a short lab,
-but many COMP 55 students are guilty of doing something slightly more extravagant,
-but I would call equally into question.
-Let's elaborate on our previous example a little more.
+but let's elaborate on our previous example a little more.
 
 😱
 
@@ -203,19 +199,6 @@ where code in different if sections is the same,
 and then to figure out what does not have to be repeated over and over again.
 Whatever both pieces share should seriously be considered for rewriting.**
 
-Also,
-for those of you who are curious,
-the reason that we have this as a single if statement
-is because of traditional languages forcing you to declare variables
-in both the if and the else statements.
-In our case,
-since we need the variables,
-we simply start by declaring them
-and then having an if handle the alternate case to change their values.
-Otherwise,
-if we were using other languages,
-we could do an if else at the top if you wanted to.
-
 Again,
 while the previous code may not feel like much of an improvement,
 I would argue that the following code does a better job as it is more readable
@@ -245,9 +228,8 @@ but in most situations,
 having this latter version is going to be better than the previous action that you created
 because we are reducing the amount of duplicate code.
 Ultimately,
-depending on what we were trying to do with the function,
-```takeAction```,
-we could decide to go further with that function
+depending on what we were trying to do with the function ```takeAction```, we could
+decide to go further with that function
 by for example taking out the action to add or subtract
 as something that is being passed in as a string.
 I only provide that here to show how the refactoring would be done.
@@ -298,9 +280,8 @@ private void takeAction(int amount) {
 }
 ```
 
-The ternary operator is not something that is used frequently however as it makes the code dense.
-Again,
-as previously mentioned,
+The ternary operator is not something that is used frequently however as it can make
+the code dense and more difficult to follow. Again, as previously mentioned,
 writing code is expressive and there are different options or strategies that you can take.
 *However, the biggest thing that I would like you to get out of this class is
 to stop repeating and pasting so much code.*
@@ -329,10 +310,6 @@ Sure it's convenient to give everyone a key,
 but it's not secure,
 and more importantly, when you're trying to debug and figure out who borrowed your Playstation,
 it makes it that much more difficult to find out who it was and when it happened.
-Also,
-it could lead to situations where people start using your room for other purposes
-that you wouldn't necessarily want
-(feel free to let your imagination wander for a minute here if you want).
 
 Like with your dorm room,
 there are situations in which your program and all of your functions
@@ -449,19 +426,12 @@ Additionally,
 the ```outsideOf``` function will be easy to test
 and can be called again as needed in other parts of the code.
 
-To be honest,
-I think a lot of the issues
-that I see with student code in COMP 55 is the lack of methods/functions
-that they tend to create for a variety of reasons.
-I understand that making them takes time,
-but again,
+Indeed, one of the common issues is a lack of methods/functions
+I understand that making them takes time, but again,
 remember that eclipse does offer the *Alt-Shift-M* keyboard shortcut
 to help you make or extract a method out of a piece of code,
 so I would encourage you to use that to make things more readable and more
 testable.
-Having more methods easily outweighs any insignificant
-(if any at all)
-performance hit you'd get from having them.
 
 #### 8. Make constants for repeating values
 
@@ -573,17 +543,18 @@ This isn't as much about testing and looking for bugs or critiquing
 as much as practicing the refactoring principles I've given you here.
 Credit will be given to how much more readable,
 flexible and possibly simple the code is in relation to the original.
+
 **You can work on this project in pairs,
 but should not break up or attempt to break up the work.
-Rather you should:
+Rather you should:**
 
-1. work on it together,
-2. propose ideas to each other about how to refactor
-3. propose ideas on what should be refactored.**
+1. **work on it together,**
+2. **propose ideas to each other about how to refactor**
+3. **propose ideas on what should be refactored.**
 
 This is not group work but teamwork.
 If you're unsure where to start,
 I would start by looking at any of the classes that have a *Pane* in the name of the java file.
-You should commit changes every time you have a factor that you'd like to propose…
+You should commit  every time you have a change that you'd like to propose…
 change it and then commit and push.
 Good luck!

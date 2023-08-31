@@ -1,8 +1,7 @@
 # Part 2 of the HashMap lab
 
 If you didn't read part 1 of the HashMaps lab,
-realize there are some puntos involved with that lab,
-so [go back to that lab](12-Hash.html) before continuing.
+[go back to that lab](12-Hash.html) before continuing.
 
 - [Initial Setup](#initial-setup)
 - [Quick detour on Gradle](#quick-detour-on-gradle)
@@ -38,6 +37,11 @@ then click ***Apply and Close***.
 
 ![Gradle preferences window](lab12media/media/gradlespecificversion.png)
 
+You may also need to right-click on the project and select
+***Gradle->Refresh Gradle Project***. At this point, there shouldn't be
+a red x or error on *src/main/java* anymore (although *src/main/test* may
+still have one). If that's the case, you can proceed with the lab.
+
 ## Quick detour on Gradle
 
 **Make sure that your project folder looks like this** -
@@ -62,12 +66,9 @@ If you notice,
 most things are the same.
 What we are gaining by using gradle is a way to automatically install particular libraries.
 Remember how at the beginning of the semester
-I had you jump through a bunch of hoops to install eclipse and change settings here,
-or there,
-and some of you have also had to work to fix your java build path for example?
+I had you jump through a bunch of hoops to install eclipse and change settings here and there?
 **With gradle all of this is taken care of**.
-Instead of fiddling with your buildpath in eclipse,
-gradle uses a file called ```build.gradle```
+Gradle uses a file called ```build.gradle```
 that allows us to provide directions on what libraries are needed to build the project
 and we could provide additional instructions on how to get the project to run.
 For this lab and from here on out we need a library called **JavaFX**,
@@ -124,7 +125,7 @@ That will remove .project from the Unstaged changes and take away the ```>``` si
 ## Reintroduction to Github
 
 You can confirm that .project has in fact not changed,
-by revisiting your repo page on github and clickong on the code section.
+by revisiting your repo page on github and clicking on the code section.
 There you will see the .project file still says ```COMP55HashMapsLab```
 instead of ```hashmaps-lab-onzfonz```.
 This will also be your first experience using github actions.
@@ -226,8 +227,6 @@ when you don't pass the tests.
 Once you have something that is green.
 You can commit and push your code.
 **Make sure you do not edit the test files.**
-If you want to see GitHub in action,
-you can go back and ensure that you have a 1 point out of 3!
 
 ### Step 2. Create a ```SoundEffect``` class that ```implements Playable```
 
@@ -343,24 +342,3 @@ you can then get the ```SoundEffect``` from the ```HashMap``` and then just play
 Test it to make sure it does in fact play the sound and voila!
 You are now one step closer to err...something.
 (~4 lines of code)
-
----
-
-## Bonus
-
-In class,
-you'll notice that I showed an explosion where the label shakes up and down,
-(if I haven't shown you this,
-please ask me to!).
-To implement this correctly,
-think about making a new class called
-```Explosion``` that inherits from ```SoundEffect```.
-You should also create a class ```LabelShaker```
-that has a ```GLabel``` as an instance variable
-and that ```implements ActionListener```.
-Then,
-in the ```play``` implementation,
-start the ```Timer```
-to move the label up and down,
-which uses the same mechanics from the dance simulator
-for moving the label back and forth on each call to ```actionPerformed```.

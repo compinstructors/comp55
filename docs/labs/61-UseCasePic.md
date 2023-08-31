@@ -49,26 +49,21 @@ that will allow us to communicate the diagrams with others.
 
 ## Wait, why plantUML again?
 
-Over the years,
-I've noticed that drawing diagrams is often inviting,
-having a sheet of paper with different folks can be a collaborative and often rich discussion.
-However,
-I've noticed a tendency for myself and the majority of students in this class
-to avoid drawing diagrams on a piece of paper.
-A majority of folks (but not all)
-when given the option started trying to draw diagrams on the computer -
-this often leaves many of us learning a new program that will allow us to draw,
-correct,
+When drawing diagrams, having a sheet of paper with different folks
+can often lead to a collaborative and rich discussion.
+However, some folks like to avoid drawing diagrams on a piece of paper
+and prefer to draw them on the computer - but this often leaves many of us
+learning a new program that will allow us to draw, correct,
 and then edit diagrams efficiently.
 While programs exist to help you draw UML diagrams,
-I haven't found them to be great solutions for ensuring that the diagrams
-that students draw are in fact following the UML standards.
+they aren't necessarily great solutions for ensuring that the diagrams
+that students are drawing are in fact following the UML standards.
 For example,
 folks using these programs sometimes use ovals when they should use rectangles
 or create arrows when we shouldn't have some,
 and vice versa.
 Also,
-once we have created a diagram using a computer program like paint or PowerPoint,
+once we have created a diagram using a computer program like Paint or PowerPoint,
 if we need to make changes we tend to drag our feet,
 as it becomes all the more cumbersome for us to change the diagram.
 Therefore,
@@ -255,7 +250,7 @@ so you would have something like so.
 
 **```rectangle```** *```"Title_Name"```* ```{```
 
-*<pre>  usecases in rectangle here</pre>*
+*```usecases in rectangle here```*
 
 ```}```
 

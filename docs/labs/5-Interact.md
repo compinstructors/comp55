@@ -223,7 +223,7 @@ This parameter of type ```MouseEvent```
 is commonly named ```e``` to stand for the event.
 To make our program more exciting,
 let's move the ball to where our mouse location is.
-Inside the `mousePressed```` function,
+Inside the ```mousePressed``` function,
 add a call to ```ball```'s ```setLocation```.
 To set the location,
 we need to provide an ```x``` and a ```y```.

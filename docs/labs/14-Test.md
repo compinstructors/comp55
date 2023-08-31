@@ -26,32 +26,20 @@ Whether you appreciated doing something tricky,
 or whether it still haunts you in your sleep,
 we did traffic jam to give you something challenging to work on
 to get you introduced to the idea of working on a significant project in parts.
-Feel lucky that you weren't my first group of students at Pacific that got that assignment,
-where I asked them to
-**complete Traffic Jam without breaking it up and only giving them two weeks**!
-After giving the assignment a few times,
-what I've seen that what helps students much more than anything else I've done so far
-is the main functions that I wrote for them,
-to make sure that they test parts they've written before moving forward.
-Imagine writing all of traffic jam only to see the grid
-and the behavior of traffic jam be at best erratic,
-my first students didn't test as they went along,
-so when they ran the program,
-they had symptoms like:
-
-- dragging a vehicle to another spot and then having that vehicle disappear
-- dragging a vehicle vertically and backwards would cause the vehicle
-  to jump to the other side of the board **but horizontally**
+One of the things that can be particularly helpful is to make sure that
+you test parts of your code before moving forward.
+Imagine writing the entirety of traffic jam, only to see the grid
+and the behavior of traffic jam be at best erratic.
 
 If you think about the code that was provided,
-like this code for Space.java
+like this code for Location.java:
 
 ```java
-//Small test code to put in Space.java to check to see if your class works
+//Small test code to put in Location.java to check to see if your class works
 
 public static void main(String[] args) {
-    Space one = new Space(3, 4);
-    Space two = new Space(1, 6);
+    Location one = new Location(3, 4);
+    Location two = new Location(1, 6);
     two.setRow(two.getRow()+1);
     two.setCol(two.getCol()-1);
     System.out.println("one r: " + one.getRow() + ", c: " + one.getCol());
@@ -59,34 +47,34 @@ public static void main(String[] args) {
 }
 ```
 
-And then this code snippet for Vehicle.java
+And then this code snippet for Vehicle.java:
 
 ```java
-Vehicle someTruck = new Vehicle(VehicleType.TRUCK, true, 3, 1, 1);
-Vehicle someAuto = new Vehicle(VehicleType.AUTO, false, 2, 2, 2);
+Vehicle someTruck = new Vehicle(VehicleType.TRUCK, 1, 1, true, 3);
+Vehicle someAuto = new Vehicle(VehicleType.AUTO, 2, 2, false, 2);
 
-System.out.println("This next test is for spacesOccupied: ");
+System.out.println("This next test is for locationsOn: ");
 
 System.out.println("vert truck at r1c1 should give you r1c1; r2c1; r3c1 as the 
-                    spaces occupied:does it?");
-printSpaces(someTruck.spacesOccupied());
+                    locations it's on top of... does it?");
+printSpaces(someTruck.locationsOn());
 
-System.out.println("horiz auto at r2c2 should give you r2c2; r2c3 as the spaces 
-                    occupied:does it?");
-printSpaces(someAuto.spacesOccupied());
+System.out.println("horiz auto at r2c2 should give you r2c2; r2c3 as the locations 
+                    it's on top of... does it?");
+printSpaces(someAuto.locationsOn());
 
 System.out.println("if we were to move horiz auto -2 it should give you at least 
-                    r2c0; r2c1; it may also add r2c2; r2c3 to its answer:does it?");
-printSpaces(someAuto.spacesOccupiedOnTrail(-2));
+                    r2c0; r2c1; it may also add r2c2; r2c3 to its answer... does it?");
+printSpaces(someAuto.locationsPath(-2));
 ```
 
 These snippets of code allowed you to test part of your functionality
 before having the entire assignment done.
 This type of testing is typically called **unit testing**,
 because we are checking for the most part if a unit
-(be it a class or method like the ```Space```,
+(be it a class or method like the ```Location```,
 or the ```Vehicle```,
-or ```spacesOccupied```)
+or ```locationsOn```)
 is behaving as it should.
 While these tests themselves are still a bit general,
 by running these in your code,
@@ -119,7 +107,9 @@ which you can call **TestingLab** if you'd like.
 This can be accomplished by going to the file menu and saying
 *File->New->Project*.
 Then from there,
-Select ***Gradle Project*** and select the desired folder.
+Select ***Gradle Project*** and create the project. (Depending on your Gradle
+version, you may find that this create a TestingLab and a TestingLab-lib project.
+If that's the case, your java files will be in ***TestingLab-lib***.)
 Then open ***src/main/java*** and rename the Library.java file that was created to **Date.java**.
 For now,
 it should have just one method,
@@ -157,7 +147,7 @@ Static methods don't operate on any data in a class,
 which makes them different from say something like ```move()```
 since that operates on a single oval object and changes the state of that oval.
 It makes one oval move.
-Static methods don't have those operations.
+Static methods don't have those operations
 and are typically written as being utility classes,
 where all the information that is needed is passed in.
 Since in our case we simply want to write a method
@@ -199,37 +189,14 @@ you can optionally [read about them here](https://sormuras.github.io/blog/2018-0
 
 ## Create a DateTest class using JUnit 4
 
-If you followed real close the gif from before where you created a new JUnit Test Case.
-
 Sometimes when you run unit tests,
 you may want to read certain information from a file
 or load another object or create something else first
 before you start doing any tests or before you do each test.
-Similarly, you might have to clean up after a test
-if say you were testing whether or not some information was written to a file,
-you may have to delete that information or restore how the file was before
-to make sure that things are nice and tidy.
-If you have in your JUnit test case these methods,
-they would be called during each of these different times.
-The typical scenario for how the files work is:
-
-1. ```setUpBeforeClass()```
-2. ```setUp()```
-3. ```test1()```
-4. ```tearDown()```
-5. ```setUp()```
-6. ```test2()```
-7. ```tearDown()```
-8. ….
-    *Keeps going for each test you have,
-    once all the tests have been
-        written then you go to*
-9. ```tearDownAfterClass()```
-
-Notice that the **same** ```setUp()``` and ```tearDown()``` are being called.
-If you have something more convoluted,
-it might make sense to talk to me about it as you don't necessarily want to have more
-than 1 ```@Before``` and 1 ```@BeforeClass``` directives.
+Similarly, you might have to clean up after a test.
+For example, if you were testing whether or not some information
+was written to a file, you may have to delete that information or
+restore how the file was before to make sure that things are nice and tidy.
 
 At this point you should be back in eclipse with your trusty new Junit Test Case file,
 where you'll see some code that looks something like this:
@@ -238,12 +205,10 @@ where you'll see some code that looks something like this:
 
 Notice that what you see is java code,
 with a couple of minor differences which I'll go over.
-The first thing you may notice is this ```import static``` command on line 3,
+The first thing you may notice is this ```import static``` command,
 which is slightly different than import.
 As you know ```import``` allows us to specify and use libraries,
-so you would be aware that there is a class called *Test.java*
-and once we import it we can then use it in our file,
-Java knows where to look.
+so we  we can then use them in our file.
 ```import static``` allows us to use methods and variables that are declared
 ```public static``` without having to use the qualifier.
 So in this case,
@@ -257,22 +222,20 @@ it's the *Not yet implemented*).
 Notice that we have no "**.**"
 operator or anything else to qualify where the ```fail``` method came from.
 This is because we had the ```import static```,
-otherwise, if we were to change line 3 to ```import org.junit.Assert```,
-we would have to change line 8 to say ```Assert.fail("not yet implemented")```.
+otherwise, if we were to change the line to ```import org.junit.Assert```,
+we would have to say ```Assert.fail("not yet implemented")```.
 You can try that if you like,
 but make sure to change it back.
-So ```import static``` is for convenience,
-almost like how we had ```using namespace std``` in C++.
 
-Next notice on line 9 that we have the ```@Test``` directive.
+Next, notice that we have the ```@Test``` directive.
 This is a special annotation that Java has introduced more recently that lets java know
 that the next method under it is one that we would like JUnit to test.
 Because it knows that it will need to test it,
 we can name the method whatever we like.
 Go ahead and change the method name to ```testIsValidDateBasic```,
 since we'll be making more methods in the future.
-The final thing to look at is from line 11,
-which is simply a command to let JUnit know that we should not pass by calling fail.
+The final thing to look at is the fail command,
+which is simply to let JUnit know that we should not pass by calling fail.
 Anytime java reaches a line that says fail,
 think of that as being a return statement,
 where the computer immediately exits and returns a fail result.
@@ -281,7 +244,11 @@ where the computer immediately exits and returns a fail result.
 
 ## Running the Junit Test
 
-To run a Junit test,
+Since we're using JUnit 4, you'll initially need to **right-click** on your project
+and select *Run As->Run Configuration...*. Then change the test runner from
+JUnit 5 to JUnit 4 and apply the changes.
+
+To run a Junit test going forward,
 you can either use the command shortcut ***Alt-Shift-X, T***,
 or you can **right-click** on the project in the package explorer and then select,
 *Run As->JUnit Test*.
@@ -298,13 +265,9 @@ Above the bar, you can notice that we won't just get whether or not everything p
 but you'll get a much more detailed look at how many of the tests passed,
 which will be organized into methods.
 
-Next in the window below,
-for each error that you get,
-clicking on them in the upper window will give you the exact line where the error occurred.
-In this case,
-we can see that is on line 8 since it says at the end (DateTest.java:8)
-and then it gives us the error,
-Here it's the failure that we knew was going to happen as
+Next in the window below, for each error that you get, clicking on them in the upper window
+will give you the exact line where the error occurred at the end of the file name, as well as the
+error that occurred. Here, it's the failure that we knew was going to happen as
 that raised an **Assertion Error** and gave us the message
 that we have yet to implement ```DateTest```.
 This is how we will get to know whether or not our code is working.
@@ -318,23 +281,20 @@ then we can go ahead and check it out by clicking on one of the methods.
 ## Building basic tests
 
 Let's start the code by building some basic tests for you to run.
-The first thing we are going to do is to delete the fail statement on line 8
-(try using **Ctrl-D** if you haven't by clicking somewhere on line 8 and
+The first thing we are going to do is to delete the fail statement
+(try using **Ctrl-D** if you haven't by clicking somewhere on the line and
 then doing Ctrl-D.) In its place,
 let's go ahead and type an ```assertTrue``` clause,
 where we provide a very basic example of a ```Date```.
 Because we are starting with basic tests,
 what we want to start with first is to think of tests
 that should be easy for our method to be able to figure out.
-For example,
-come up with a basic Date example that the computer should recognize as a Date.
-For example,
-something like the example I posted above,
-```4-15-2017```.
-For that example,
-what we want to do is assert
-that when we call ```isValidDate``` on ```4-15-2017``` it will return ```true```.
-Thus the line would change to something like this.
+For example, come up with a basic Date example that the
+computer should recognize as a Date. For example, something like
+the example I posted above, ```4-15-2017```.
+For that example, what we want to do is assert
+that when we call ```isValidDate``` on ```4-15-2017``` it will
+return ```true```. Thus the line would change to something like this.
 
 ```java
 assertTrue(Date.isValidDate(4, 15, 2017));
@@ -356,7 +316,7 @@ You can come up with any type of basic result,
 but even something like ```55-8-2017``` should not be considered a valid Date.
 In its simplest terms,
 such a thing would be considered a simple test.
-At this point, you could copy and paste line 8,
+At this point, you could copy and paste this line,
 but then change the ```assertTrue``` to an ```assertFalse``` instead,
 and change ```4,15,2017``` to ```55,8,2017```.
 There are some disadvantages to copying and pasting code
@@ -366,7 +326,7 @@ but just having more tests outweigh some of the potential drawbacks in this scen
 In addition to ```assertTrue``` and ```assertFalse```,
 you also have available an ```assertEquals``` method,
 which compares the two parameters to make sure that they are equal to each other.
-There are also assertNull and ```assertNotNull```,
+There are also ```assertNull``` and ```assertNotNull```,
 which will just check for null or not null on a particular object.
 If you are ever unsure about what assert statements the JUnit framework has made available to you,
 the best thing to do is to use ***Ctrl-Space*** to look up the different assert statements
@@ -460,21 +420,11 @@ let's come up with some more complicated examples of tests for Dates.
     it's worth reading
     [this short article about leap years](https://www.infoplease.com/leap-year-explained).
 
-Let me know if you have any other questions about any of these steps
-
-## Assertions and GUI Testing (Optional)
-
-An advanced tool for testing is using Assertions similar to the assert functions
-that you have used previously,
-but Assertions can be done during run time instead of debugging.
-Also in addition to Unit Testing,
-it's important to know about GUI Testing.
-To learn more about assertions or GUI Testing,
-follow [this optional guide created by former COMP 55 students](14-A-TestOptional.html).
+Let me know if you have any other questions about any of these steps.
 
 ## Review Questions
 
-***Place your answers to these questions as comments in the TestDate.java file and upload them to canvas***
+***Place your answers to these questions as comments in the DateTest.java file and upload them to canvas***
 
 1. How many Test methods did I have you make?
 2. What are the differences between those test methods?

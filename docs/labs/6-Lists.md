@@ -91,7 +91,7 @@ Here is some sample ArrayList code.
 void foo() {
     ArrayList<String> names = new ArrayList<String>();
     names.add("Osvaldo");
-    names.add("David");
+    names.add("Sebastian");
     printList(names);
     names.remove("Osvaldo");
     printList(names);
@@ -116,9 +116,8 @@ since your end goal will be to have multiple balls bouncing off the screen.
 **If you decide to copy and paste the code into another project,
 you should make sure to change the ```main``` method at the bottom,
 which should change from**
-```newBall().start()``` **to** ```new Balls().start()```.
-**You should also delete all mouse handlers except**  
-```mousePressed```.
+```new Ball().start()``` **to** ```new Balls().start()```.
+**You should also delete all mouse handlers except** ```mousePressed```.
 
 You'll also have the program change a single ball's color when that particular ball is picked.
 Let's start by introducing a constant in your file ```NUM_BALLS```
